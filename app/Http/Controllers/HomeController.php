@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
       $paslon = Paslon::orderBy('nomerurut')->get();
-      if(auth()->user()->admin==1) {
+      if(auth()->user()->role==1) {
         return view('admin/home');
       }
       else{

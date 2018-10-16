@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/listMahasiswa';
+    protected $redirectTo = '/admin/listMahasiswa';
 
     /**
      * Create a new controller instance.
@@ -52,8 +52,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'nim' => 'required|string|max:255|unique:users',
             'angkatan' => 'required|string|max:255',
-            'admin' => 'required|string|max:255',
-            'pilihan' => 'required|string|max:255',
+            'role' => 'required|string|max:255',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -70,8 +69,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'nim' => $data['nim'],
             'angkatan' => $data['angkatan'],
-            'admin' => $data['admin'],
-            'pilihan' => $data['pilihan'],
+            'role' => $data['role'],
             'password' => hash::make($data['password']),
         ]);
     }

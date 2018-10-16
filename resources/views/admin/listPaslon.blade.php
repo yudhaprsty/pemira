@@ -31,7 +31,7 @@
                   @foreach($paslon as $paslons)
                   <tr>
                     <td style="text-align:center;">{{ $paslons->nomerurut }}</td>
-                    <td style="text-align:center;"><img src="{{ asset('paslon/$paslons->image') }}" style="width:100px; height:100px;"></td>
+                    <td style="text-align:center;"><img src="{{asset($paslons->image)}}" style="width:100px; height:100px;"></td>
                     <td style="text-align:center;">{{ $paslons->namaketua }}</td>
                     <td style="text-align:center;">{{ $paslons->namawakilketua }}</td>
                     <td style="text-align:center;">{{ $paslons->angkatanketua }}</td>

@@ -59,7 +59,7 @@
                 <div class="form-group">
                     <label for="super-user" class="control-label col-md-3 col-sm-3 col-xs-12">{{ __('Posisi') }}<span class="required">*</span></label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select name="admin" id="" class="form-control center" required>
+                        <select name="role" id="" class="form-control center" required>
                             <option value="" disabled selected hidden>Pilih Posisi</option>
                             <option value="1">Admin</option>
                             <option value="0">Mahasiswa</option>

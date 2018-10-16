@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('nim')->unique();
             $table->integer('angkatan');
             $table->string('pilihan')->nullable();
-            $table->integer('admin');
+            $table->integer('role');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
