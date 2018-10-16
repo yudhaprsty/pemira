@@ -64,10 +64,15 @@ class AdminController extends Controller
         // }
         if ($request->hasFile('image'))
          {
-           $file = $request->file('image');
-           $name = $file->getClientOriginalName();
-           $paslon->image = $name;
-           $file->move(public_path().'paslon', $name);
+            $file = $request->file('image');
+            $name = $paslon->namaketua.' - '.$paslon->namawakilketua.'.png';
+            $destinationPath = public_path('images');
+            $file->move($destinationPath, $name);
+            $paslon->image = 'images/'.$name;
+
+            // $path = $file->storeAs('gambars', $name);
+            // $paslon->image = $path;
+            // $file->move(public_path().'paslon', $name);
          }
         $paslon->save();
   	    return redirect('/admin/listPaslon');
@@ -76,20 +81,20 @@ class AdminController extends Controller
   public function addMahasiswa(Request $request)
   {
     $this->validate($request, array(
-              'name'          => 'required|max:100',
-              'nim'         => 'required|unique:users',
-              'angkatan'     => 'required',
-              'admin'        => 'required',
-              'password'        => 'required',
-          ));
-      $user   = User::create([
-              'name'           => $request->input('name'),
-              'nim'          => $request->input('nim'),
-              'angkatan'      => $request->input('angkatan'),
-              'admin'        => $request->input('admin'),
-              'password'       => Hash::make($request['password']),
-          ]);
-      return redirect('/admin/listMahasiswa');
+        'name'          => 'required|max:100',
+        'nim'         => 'required|unique:users',
+        'angkatan'     => 'required',
+        'role'        => 'required',
+        'password'        => 'required',
+    ));
+    $user   = User::create([
+        'name'           => $request->input('name'),
+        'nim'          => $request->input('nim'),
+        'angkatan'      => $request->input('angkatan'),
+        'role'        => $request->input('role'),
+        'password'       => Hash::make($request['password']),
+    ]);
+    return redirect('/admin/listMahasiswa');
   }
 
   public function deletePaslon(Request $request)

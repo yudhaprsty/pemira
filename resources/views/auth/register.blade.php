@@ -59,18 +59,18 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Admin') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('role') }}</label>
 
                             <div class="col-md-6">
-                                <!-- <input id="name" type="number" class="form-control{{ $errors->has('admin') ? ' is-invalid' : '' }}" name="admin" value="{{ old('admin') }}" required autofocus> -->
-                                <select class="tags form-control program-multi" tabindex="-1"  name="admin" required="required">
+                                <!-- <input id="name" type="number" class="form-control{{ $errors->has('role') ? ' is-invalid' : '' }}" name="role" value="{{ old('role') }}" required autofocus> -->
+                                <select class="tags form-control program-multi" tabindex="-1"  name="role" required="required">
                                   <option value="" disabled selected hidden>Pilih Posisi</option>
                                   <option value="1">Admin</option>
                                   <option value="0">Mahasiswa</option>
                                 </select>
-                                @if ($errors->has('admin'))
+                                @if ($errors->has('role'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('admin') }}</strong>
+                                        <strong>{{ $errors->first('role') }}</strong>
                                     </span>
                                 @endif
                             </div>
