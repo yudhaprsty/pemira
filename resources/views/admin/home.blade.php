@@ -9,14 +9,14 @@
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="tile-stats">
             <div class="icon"><i class="fa fa-user"></i></div>
-            <div class="count">1</div>
+            <div class="count">{{ DB::table('users')->count() }}</div>
             <h3>Mahasiswa Ilkom</h3>
           </div>
         </div>
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="tile-stats">
             <div class="icon"><i class="fa fa-shopping-cart"></i></div>
-            <div class="count">2</div>
+            <div class="count">{{ DB::table('paslons')->count() }}</div>
             <h3>Pasangan Calon</h3>
           </div>
         </div>

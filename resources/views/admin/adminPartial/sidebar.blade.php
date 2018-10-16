@@ -1,18 +1,18 @@
 <div class="col-md-3 left_col">
   <div class="left_col scroll-view">
     <div class="navbar nav_title" style="border: 0;">
-      <a href="#" class="site_title"><i class="fa fa-coffee"></i> <span>HIMALKOM</span></a>
+      <a href="{{ route('home') }}" class="site_title"><i class="fa fa-coffee"></i> <span>HIMALKOM</span></a>
     </div>
     <div class="clearfix"></div>
 
     <!-- menu profile quick info -->
     <div class="profile clearfix">
       <div class="profile_pic">
-        <img src="#" alt="..." class="img-circle profile_img">
+        <img src="{{ asset('admin/production/images/img.jpg') }}" alt="..." class="img-circle profile_img">
       </div>
       <div class="profile_info">
         <span>Welcome,</span>
-        <h2>test</h2>
+        <h2>{{ Auth::user()->name }}</h2>
       </div>
     </div>
     <!-- /menu profile quick info -->
@@ -23,17 +23,17 @@
         <ul class="nav side-menu">
           <li><a><i class="fa fa-shopping-cart"></i> Pasangan Calon <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
-              <li><a href="#">Daftar Pasangan Calon</a></li>
-              <li><a href="#">Tambah Pasangan Calon</a></li>
+              <li><a href="{{ route('admin.paslon') }}">Daftar Pasangan Calon</a></li>
+              <li><a href="{{ route('admin.tambahpaslon') }}">Tambah Pasangan Calon</a></li>
             </ul>
           </li>
           <li><a><i class="fa fa-list-alt"></i> Mahasiswa Ilkom <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
-              <li><a href="#">Daftar Mahasiswa</a></li>
-              <li><a href="#">Tambah Mahasiswa</a></li>
+              <li><a href="{{ route('admin.mahasiswa') }}">Daftar Mahasiswa</a></li>
+              <li><a href="{{ route('admin.tambahmahasiswa') }}">Tambah Mahasiswa</a></li>
             </ul>
           </li>
-          <li><a><i class="fa fa-list-alt"></i> Hasil Perolehan </a>
+          <li><a href="{{ route('admin.hasilperolehan') }}"><i class="fa fa-list-alt"></i> Hasil Perolehan </a>
           </li>
         </ul>
       </div>

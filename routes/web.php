@@ -19,10 +19,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/homeuser', function () {
-    return view('user/home');
-});
+Route::group(['prefix'=>'admin'], function(){
+  Route::get('/listMahasiswa', 'AdminController@listMahasiswa')->name('admin.mahasiswa');
+  Route::get('/listPaslon', 'AdminController@listPaslon')->name('admin.paslon');
+  Route::get('/tambahPaslon', 'AdminController@tambahPaslon')->name('admin.tambahpaslon');
+  Route::get('/tambahMahasiswa', 'AdminController@tambahMahasiswa')->name('admin.tambahmahasiswa');
+  Route::get('/hasilPerolehan', 'AdminController@hasilPerolehan')->name('admin.hasilperolehan');
 
-Route::get('/homeAdmin', function () {
-    return view('admin/home');
+  Route::post('/addPaslon', 'AdminController@addPaslon')->name('admin.addpaslon');
+  Route::post('/deletePaslon', 'AdminController@deletePaslon')->name('admin.deletepaslon');
+  Route::post('/addMahasiswa', 'AdminController@addMahasiswa')->name('admin.addmahasiswa');
 });

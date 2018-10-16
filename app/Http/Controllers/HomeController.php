@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Paslon;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+      $paslon = Paslon::orderBy('nomerurut')->get();
+      if(auth()->user()->admin==1) {
+        return view('admin/home');
+      }
+      else{
+        return view('user/home', compact('paslon'));
+      }
     }
 }

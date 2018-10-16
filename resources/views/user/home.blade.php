@@ -72,6 +72,17 @@
 				<ul class="main-nav nav navbar-nav navbar-right">
 					<li><a href="#home">Home</a></li>
 					<li><a href="#portfolio">Pasangan Calon</a></li>
+					<li>
+							<a class="dropdown-item" href="{{ route('logout') }}"
+								 onclick="event.preventDefault();
+															 document.getElementById('logout-form').submit();">
+									{{ __('Logout') }}
+							</a>
+
+							<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+									@csrf
+							</form>
+					</li>
 				</ul>
 				<!-- /Main navigation -->
 
@@ -116,20 +127,22 @@
 					<h2 class="title">Pasangan Calon ketua dan wakil ketua Himalkom</h2>
 				</div>
 				<!-- /Section header -->
-
+				@foreach($paslon as $paslons)
 				<!-- Work -->
 				<div class="col-md-4 col-xs-6 work">
 					<img class="img-responsive" src="{{ asset('user/img/work1.jpg') }}" alt="">
 					<div class="overlay"></div>
 					<div class="work-content">
-						<h3>Lorem ipsum dolor</h3>
+						<h3>{{ $paslons->nomerurut }}</h3>
+						<h3>Ketua : {{ $paslons->namaketua }}</h3>
+						<h3>Wakil Ketua : {{ $paslons->namawakilketua }}</h3>
 						<div class="work-link">
 							<a href="#"><i>PILIH</i></a>
 						</div>
 					</div>
 				</div>
 				<!-- /Work -->
-
+				@endforeach
 				<!-- Work -->
 				<div class="col-md-4 col-xs-6 work">
 					<img class="img-responsive" src="{{ asset('user/img/work2.jpg') }}" alt="">
@@ -197,7 +210,7 @@
 
 					<!-- footer copyright -->
 					<div class="footer-copyright">
-
+						<p>{{ Auth::User()->name }} - {{ Auth::user()->nim }}</p>
 					</div>
 					<!-- /footer copyright -->
 
