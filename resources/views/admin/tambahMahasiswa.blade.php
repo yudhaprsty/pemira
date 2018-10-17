@@ -1,4 +1,4 @@
-<?php session()->put('flag', 3); ?>
+<?php session()->put('flag', 4); ?>
 @extends('admin.adminPartial.master')
 
 @section('content')

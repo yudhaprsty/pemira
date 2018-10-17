@@ -15,16 +15,16 @@
       $value = 'Home';
     }
     else if($value==2) {
-      $value = 'Add Admin';
+      $value = 'List Mahasiswa';
     }
     else if($value==3) {
-      $value = 'Add Category';
+      $value = 'List Pasangan Calon';
     }
     else if($value==4) {
-      $value = 'Add Company Profile';
+      $value = 'Tambah Mahasiswa';
     }
     else if($value==5) {
-      $value = 'Add Sub Category';
+      $value = 'Tambah Pasangan Calon';
     }
     else if($value==6) {
       $value = 'Add News';

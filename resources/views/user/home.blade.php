@@ -48,7 +48,7 @@
 
 				<div class="navbar-header">
 					<div class="navbar-brand">
-						<a href="index.html">
+						<a href="{{ route('home') }}">
 							<img class="logo" src="{{ asset('user/img/logohimalkom.jpg') }}" alt="logo">
 							<img class="logo-alt" src="{{ asset('user/img/logohimalkom.jpg') }}" alt="logo">
 						</a>
@@ -58,7 +58,7 @@
 					</div>
 				</div>
 				<ul class="main-nav nav navbar-nav navbar-right">
-					<li><a href="#home">Home</a></li>
+					<!-- <li><a href="#home">Home</a></li> -->
 					<li><a href="#portfolio">Pasangan Calon</a></li>
 					<li>
 							<a class="dropdown-item" href="{{ route('logout') }}"

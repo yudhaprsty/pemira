@@ -1,4 +1,4 @@
-<?php session()->put('flag', 8); ?>
+<?php session()->put('flag', 2); ?>
 @extends('admin.adminPartial.master')
 
 @section('content')
@@ -59,52 +59,6 @@
                             </div>
                           </form>
                         </div>
-                      </div>
-
-                      <a href="#edit" data-toggle="modal"><button type='button' class='btn btn-warning btn-sm'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span> Edit</button></a>
-                      <div id="edit" class="modal fade" role="dialog">
-                        <form method="post" class="form-horizontal" role="form" action="#">
-                        {{ csrf_field() }}
-                          <div class="modal-dialog modal-lg">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Edit Item</h4>
-                              </div>
-                              <div class="modal-body" style="height:170px;">
-                                <input type="hidden" name="id" value="">
-
-                                <div class="form-group col-sm-6">
-                                  <label class="control-label " for="item_name">Name</label>
-                                  <div>
-                                    <input class="form-control" id="item_description" name="name" value="" required style="width: 70%;">
-                                  </div>
-                                  <label class="control-label " for="item_description">Email</label>
-                                  <div>
-                                    <input type="email" class="form-control" id="item_description" name="email" value="" required style="width: 70%;">
-                                  </div>
-                                </div>
-
-                                <div class="form-group col-sm-6">
-                                  <label class="control-label " for="item_name">Account Type</label>
-                                  <div>
-                                    <input class="form-control" id="item_description" name="superuser" value="" required style="width: 70%;">
-                                  </div>
-                                  <label class="control-label " for="item_name">Password</label>
-                                  <div>
-                                    <input type="password" class="form-control" name="password" required style="width: 70%;">
-                                  </div>
-                                </div>
-
-                              </div>
-                              <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" name="update_item"><span class="glyphicon glyphicon-edit"></span> Save</button>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> Cancel</button>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
                       </div>
                     </td>
                   </tr>

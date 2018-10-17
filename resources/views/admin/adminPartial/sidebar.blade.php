@@ -1,7 +1,7 @@
 <div class="col-md-3 left_col">
   <div class="left_col scroll-view">
     <div class="navbar nav_title" style="border: 0;">
-      <a href="{{ route('home') }}" class="site_title"><i class="fa fa-coffee"></i> <span>HIMALKOM</span></a>
+      <a href="{{ route('home') }}" class="site_title"><span>HIMALKOM</span></a>
     </div>
     <div class="clearfix"></div>
 
@@ -33,8 +33,8 @@
               <li><a href="{{ route('admin.tambahmahasiswa') }}">Tambah Mahasiswa</a></li>
             </ul>
           </li>
-          <li><a href="{{ route('admin.hasilperolehan') }}"><i class="fa fa-list-alt"></i> Hasil Perolehan </a>
-          </li>
+          <!-- <li><a href="{{ route('admin.hasilperolehan') }}"><i class="fa fa-list-alt"></i> Hasil Perolehan </a>
+          </li> -->
         </ul>
       </div>
     </div>
