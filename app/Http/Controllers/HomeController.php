@@ -24,12 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-      $paslon = Paslon::orderBy('nomerurut')->get();
+      $paslons = Paslon::orderBy('nomerurut')->get();
       if(auth()->user()->role==1) {
         return view('admin/home');
       }
       else{
-        return view('user/home', compact('paslon'));
+        return view('user/home', compact('paslons'));
       }
     }
 }

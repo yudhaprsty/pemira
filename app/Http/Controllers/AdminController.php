@@ -28,7 +28,8 @@ class AdminController extends Controller
   public function listPaslon()
   {
       $paslon = Paslon::all();
-      return view('admin/listPaslon', compact('paslon'));
+      $user = User::all();
+      return view('admin/listPaslon', compact('paslon', 'user'));
   }
 
   public function tambahMahasiswa()
@@ -114,6 +115,7 @@ class AdminController extends Controller
 
   public function hasilPerolehan()
   {
-      return view('admin/hasilPerolehan');
+      $paslon = Paslon::all();
+      return view('admin/hasilPerolehan', compact('paslon'));
   }
 }

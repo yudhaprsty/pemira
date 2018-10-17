@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix'=>'admin'], function(){
   Route::get('/listMahasiswa', 'AdminController@listMahasiswa')->name('admin.mahasiswa');
@@ -32,7 +32,7 @@ Route::group(['prefix'=>'admin'], function(){
 });
 
 Route::group(['prefix' => 'user'], function(){
-  Route::get('/home', 'UserController@home');
+  // Route::get('/home', 'UserController@home');
 
   Route::get('/pilih/{paslon_id}', 'UserController@pilih')->name('user.pilih');
 });

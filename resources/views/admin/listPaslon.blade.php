@@ -29,6 +29,10 @@
 
                 <tbody>
                   @foreach($paslon as $paslons)
+                  <?php
+                  // use App\User;
+                    // dd($test);
+                  ?>
                   <tr>
                     <td style="text-align:center;">{{ $paslons->nomerurut }}</td>
                     <td style="text-align:center;"><img src="{{asset($paslons->image)}}" style="width:100px; height:100px;"></td>
@@ -36,7 +40,7 @@
                     <td style="text-align:center;">{{ $paslons->namawakilketua }}</td>
                     <td style="text-align:center;">{{ $paslons->angkatanketua }}</td>
                     <td style="text-align:center;">{{ $paslons->angkatanwakilketua }}</td>
-                    <td style="text-align:center;"></td>
+                    <td style="text-align:center;">{{ App\User::where(['pilihan' => $paslons->id])->get()->count() }}</td>
                     <td style="text-align:center;">
                       <a href="#delete{{ $paslons->id }}" data-toggle="modal"><button type='button' class='btn btn-danger btn-sm'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span> Delete</button></a>
                       <div id="delete{{ $paslons->id }}" class="modal fade" role="dialog">

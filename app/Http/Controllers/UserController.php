@@ -14,16 +14,16 @@ class UserController extends Controller
         $this->middleware('auth');
     }
 
-    public function home(){
-        $paslons = Paslon::orderBy('nomerurut')->get();
-        return view('user/home', compact('paslons'));
-        // if(auth()->user()->role==1) {
-        //     return view('admin/home');
-        // }
-        // else{
-        //     return view('user/home', compact('paslon'));
-        // }
-    }
+    // public function home(){
+    //     $paslons = Paslon::orderBy('nomerurut')->get();
+    //     return view('user/home', compact('paslons'));
+    //     // if(auth()->user()->role==1) {
+    //     //     return view('admin/home');
+    //     // }
+    //     // else{
+    //     //     return view('user/home', compact('paslon'));
+    //     // }
+    // }
 
     public function pilih($paslon_id){
         $user = User::find(Auth::user()->id);

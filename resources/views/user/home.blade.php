@@ -39,11 +39,11 @@
 </head>
 
 <body>
-	<header id="home">
+	<!-- <header id="home">
 		<div class="bg-img" style="background-image: url('user/img/background1.jpg');">
 			<div class="overlay"></div>
-		</div>
-		<nav id="nav" class="navbar nav-transparent">
+		</div> -->
+		<nav id="nav" class="navbar">
 			<div class="container">
 
 				<div class="navbar-header">
@@ -75,7 +75,7 @@
 			</div>
 		</nav>
 		@if (\App\User::find(\Auth::user()->id)->pilihan == NULL)
-			<div class="home-wrapper">
+			<!-- <div class="home-wrapper">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-10 col-md-offset-1">
@@ -87,9 +87,9 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		@else
-			<div class="home-wrapper">
+			<!-- <div class="home-wrapper">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-10 col-md-offset-1">
@@ -101,10 +101,10 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		@endif
-		
-	</header>
+
+	<!-- </header> -->
 	@if (\App\User::find(\Auth::user()->id)->pilihan == NULL)
 		<div id="portfolio" class="section md-padding bg-grey">
 			<div class="container">
@@ -129,8 +129,19 @@
 				</div>
 			</div>
 		</div>
+		@else
+		<div id="portfolio" class="section md-padding bg-grey">
+			<div class="container">
+				<div class="row">
+					<div class="section-header text-center">
+						<h2 class="title">Pasangan Calon ketua dan wakil ketua Himalkom</h2>
+					</div>
+					<p>Terimkasih Telah Menggunakan Hak Suara Anda</p>
+				</div>
+			</div>
+		</div>
 	@endif
-	
+
 	<footer id="footer" class="sm-padding bg-dark">
 		<div class="container">
 			<div class="row">
