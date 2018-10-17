@@ -9,7 +9,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
           <div class="x_panel">
             <div class="x_title">
-              <h2>List Pasangan Calon</h2>
+              <h2>List Mahasiswa</h2>
               <div class="clearfix"></div>
             </div>
             <div class="x_content">
@@ -37,23 +37,23 @@
                     <td style="text-align:center;">{{ $mahasiswas->angkatan }}</td>
                     <td style="text-align:center;">{{ $mahasiswas->pilihan }}</td>
                     <td style="text-align:center;">
-                      <a href="#delete" data-toggle="modal"><button type='button' class='btn btn-danger btn-sm'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span> Delete</button></a>
-                      <div id="delete" class="modal fade" role="dialog">
+                      <a href="#delete{{ $mahasiswas->id }}" data-toggle="modal"><button type='button' class='btn btn-danger btn-sm'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span> Hapus</button></a>
+                      <div id="delete{{ $mahasiswas->id }}" class="modal fade" role="dialog">
                         <div class="modal-dialog">
-                          <form method="post" action="#">
+                          <form method="post" action="{{ url('admin/deleteMahasiswa') }}">
                           {{ csrf_field() }}
                             <!-- Modal content-->
                             <div class="modal-content">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Delete</h4>
+                                <h4 class="modal-title">Hapus</h4>
                               </div>
                               <div class="modal-body">
                                 <input type="hidden" name="id" value="">
-                                <p><div class="alert alert-danger">Are you sure you want delete <strong>?</strong></div></p>
+                                <p><div class="alert alert-danger">Apakah anda yakin ngin menghapus pasangan {{ $mahasiswas->name }} <strong>?</strong></div></p>
                                 <div class="modal-footer">
-                                  <button type="submit" name="delete" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Yes</button>
-                                  <button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> No</button>
+                                  <button type="submit" name="delete" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Ya</button>
+                                  <button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span> Tidak</button>
                                 </div>
                               </div>
                             </div>

@@ -42,7 +42,7 @@
                     <td style="text-align:center;">{{ $paslons->angkatanwakilketua }}</td>
                     <td style="text-align:center;">{{ App\User::where(['pilihan' => $paslons->id])->get()->count() }}</td>
                     <td style="text-align:center;">
-                      <a href="#delete{{ $paslons->id }}" data-toggle="modal"><button type='button' class='btn btn-danger btn-sm'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span> Delete</button></a>
+                      <a href="#delete{{ $paslons->id }}" data-toggle="modal"><button type='button' class='btn btn-danger btn-sm'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span> Hapus</button></a>
                       <div id="delete{{ $paslons->id }}" class="modal fade" role="dialog">
                         <div class="modal-dialog">
                           <form method="post" action="{{ route('admin.deletepaslon') }}">

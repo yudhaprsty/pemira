@@ -29,6 +29,7 @@ Route::group(['prefix'=>'admin'], function(){
   Route::post('/addPaslon', 'AdminController@addPaslon')->name('admin.addpaslon');
   Route::post('/deletePaslon', 'AdminController@deletePaslon')->name('admin.deletepaslon');
   Route::post('/addMahasiswa', 'AdminController@addMahasiswa')->name('admin.addmahasiswa');
+  Route::post('/deleteMahasiswa', 'AdminController@deleteMahasiswa')->name('admin.deletemahasiswa');
 });
 
 Route::group(['prefix' => 'user'], function(){

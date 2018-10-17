@@ -21,7 +21,7 @@ class AdminController extends Controller
 
   public function listMahasiswa()
   {
-      $mahasiswa = User::all();
+      $mahasiswa = User::orderby('nim')->get();
       return view('admin/listMahasiswa', compact('mahasiswa'));
   }
 
@@ -111,6 +111,17 @@ class AdminController extends Controller
         }
         $paslon->delete();
       	return redirect('/admin/listPaslon');
+    }
+
+    public function deleteMahasiswa(Request $request)
+    {
+      $this->validate($request,[
+        'id' => 'required',
+      ]);
+      // $id = Crypt::decrypt($news_id);
+      $akun = User::find($request->input('id'));
+      $akun->delete();
+      return redirect('/admin/listMahasiswa');
     }
 
   public function hasilPerolehan()
