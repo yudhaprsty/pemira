@@ -35,7 +35,11 @@
                     <td style="text-align:center;">{{ $mahasiswas->name }}</td>
                     <td style="text-align:center;">{{ $mahasiswas->nim }}</td>
                     <td style="text-align:center;">{{ $mahasiswas->angkatan }}</td>
-                    <td style="text-align:center;">{{ $mahasiswas->pilihan }}</td>
+                    @if($mahasiswas->pilihan == NULL)
+                    <td style="text-align:center;">belum memilih</td>
+                    @else
+                    <td style="text-align:center;">sudah memilih</td>
+                    @endif
                     <td style="text-align:center;">
                       <a href="#delete{{ $mahasiswas->id }}" data-toggle="modal"><button type='button' class='btn btn-danger btn-sm'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span> Hapus</button></a>
                       <div id="delete{{ $mahasiswas->id }}" class="modal fade" role="dialog">
