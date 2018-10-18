@@ -35,7 +35,7 @@
         <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
           <div class="tile-stats">
             <div class="icon"><i class="fa fa-shopping-cart"></i></div>
-            <div class="count">{{ $test3 }}</div>
+            <div class="count">{{ substr($test3, 0, 2) }}%</div>
             <h3>Persentase Suara</h3>
           </div>
         </div>
