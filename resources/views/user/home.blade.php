@@ -136,7 +136,7 @@
 					<div class="section-header text-center">
 						<h2 class="title">Pasangan Calon ketua dan wakil ketua Himalkom</h2>
 					</div>
-					<p style="text-align:center;">Terimkasih Telah Menggunakan Hak Suara Anda</p>
+					<p style="text-align:center;">Terimakasih Telah Menggunakan Hak Suara Anda</p>
 				</div>
 			</div>
 		</div>
