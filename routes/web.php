@@ -34,6 +34,5 @@ Route::group(['prefix'=>'admin'], function(){
 
 Route::group(['prefix' => 'user'], function(){
   // Route::get('/home', 'UserController@home');
-
   Route::get('/pilih/{paslon_id}', 'UserController@pilih')->name('user.pilih');
 });
