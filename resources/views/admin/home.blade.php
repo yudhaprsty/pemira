@@ -27,6 +27,18 @@
             <h3>Jumlah Suara</h3>
           </div>
         </div>
+        <?php
+        $test = App\User::where('pilihan', '!=', 'NULL')->get()->count();
+        $test2 = DB::table('users')->count();
+        $test3 = ($test/$test2)*100;
+        ?>
+        <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+          <div class="tile-stats">
+            <div class="icon"><i class="fa fa-shopping-cart"></i></div>
+            <div class="count">{{ $test3 }}</div>
+            <h3>Persentase Suara</h3>
+          </div>
+        </div>
       </div>
     </div>
   </div>
