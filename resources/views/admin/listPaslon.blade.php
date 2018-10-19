@@ -16,7 +16,7 @@
               <table id="datatable" class="table table-striped table-bordered">
                 <thead>
                   <tr>
-                    <th style="text-align:center;">Nomer Urut</th>
+                    <th style="text-align:center;">Nomor Urut</th>
                     <th style="text-align:center;">Foto</th>
                     <th style="text-align:center;">Nama Ketua</th>
                     <th style="text-align:center;">Nama Wakil Ketua</th>
